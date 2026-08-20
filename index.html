@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="antialiased bg-white text-gray-800 selection:bg-teal-100 selection:text-teal-900">
+<body class="antialiased bg-white text-gray-800 selection:bg-teal-100 selection:text-teal-900" data-theme="light">
 
   <nav class="fixed top-0 left-0 right-0 z-50 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.1s both;">
     <div class="flex justify-center px-4 pt-6">
@@ -28,12 +28,30 @@
           <span class="font-display text-2xl font-semibold text-navy tracking-tight">Karey Vet</span>
         </a>
 
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
           <a href="#producto" class="text-gray-600 hover:text-teal transition-colors">Producto</a>
           <a href="#features" class="text-gray-600 hover:text-teal transition-colors">Funciones</a>
           <a href="#use-cases" class="text-gray-600 hover:text-teal transition-colors">Casos de uso</a>
           <a href="#pricing" class="text-gray-600 hover:text-teal transition-colors">Precios</a>
           <a href="#faq" class="text-gray-600 hover:text-teal transition-colors">FAQ</a>
+          <div class="nav-switches" aria-label="Controles de interfaz">
+            <div class="ui-switch" role="group" aria-label="Idioma">
+              <button type="button" class="ui-switch-btn active" data-set-lang="es">ES</button>
+              <button type="button" class="ui-switch-btn" data-set-lang="en">EN</button>
+            </div>
+            <div class="ui-switch theme-switch" role="group" aria-label="Tema">
+              <button type="button" class="ui-switch-btn active" data-set-theme="light" aria-label="Modo claro">
+                <svg class="ui-switch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3V5.25M12 18.75V21M5.636 5.636L7.227 7.227M16.773 16.773L18.364 18.364M3 12H5.25M18.75 12H21M5.636 18.364L7.227 16.773M16.773 7.227L18.364 5.636M15.75 12A3.75 3.75 0 1112 8.25 3.75 3.75 0 0115.75 12z"/>
+                </svg>
+              </button>
+              <button type="button" class="ui-switch-btn" data-set-theme="dark" aria-label="Modo oscuro">
+                <svg class="ui-switch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12.79A9 9 0 1111.21 3c0 .19-.01.37-.01.56A7.5 7.5 0 0018.44 12c.19 0 .37-.01.56-.01z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
           <a href="#contact" class="bg-gradient-to-r from-teal to-navy text-white px-6 py-2 rounded-sm hover:opacity-90 transition-opacity">Solicitar demo</a>
         </div>
 
@@ -53,6 +71,24 @@
       <a href="#use-cases" class="text-3xl font-display text-navy hover:text-teal transition-colors">Casos de uso</a>
       <a href="#pricing" class="text-3xl font-display text-navy hover:text-teal transition-colors">Precios</a>
       <a href="#faq" class="text-3xl font-display text-navy hover:text-teal transition-colors">FAQ</a>
+      <div class="mobile-switches" aria-label="Controles de interfaz">
+        <div class="ui-switch" role="group" aria-label="Idioma">
+          <button type="button" class="ui-switch-btn active" data-set-lang="es">ES</button>
+          <button type="button" class="ui-switch-btn" data-set-lang="en">EN</button>
+        </div>
+        <div class="ui-switch theme-switch" role="group" aria-label="Tema">
+          <button type="button" class="ui-switch-btn active" data-set-theme="light" aria-label="Modo claro">
+            <svg class="ui-switch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3V5.25M12 18.75V21M5.636 5.636L7.227 7.227M16.773 16.773L18.364 18.364M3 12H5.25M18.75 12H21M5.636 18.364L7.227 16.773M16.773 7.227L18.364 5.636M15.75 12A3.75 3.75 0 1112 8.25 3.75 3.75 0 0115.75 12z"/>
+            </svg>
+          </button>
+          <button type="button" class="ui-switch-btn" data-set-theme="dark" aria-label="Modo oscuro">
+            <svg class="ui-switch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12.79A9 9 0 1111.21 3c0 .19-.01.37-.01.56A7.5 7.5 0 0018.44 12c.19 0 .37-.01.56-.01z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
       <a href="#contact" class="bg-gradient-to-r from-teal to-navy text-white px-8 py-3 rounded-sm text-lg">Solicitar demo</a>
     </div>
   </div>
@@ -76,7 +112,7 @@
       </div>
 
       <div class="text-center mb-12 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.5s both;">
-        <h1 class="font-display text-5xl md:text-7xl font-bold text-navy leading-tight mb-6">
+        <h1 id="hero-title" class="font-display text-5xl md:text-7xl font-bold text-navy leading-tight mb-6">
           Todo lo que pasa en tu veterinaria,
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal to-navy">conectado</span>
         </h1>
@@ -856,7 +892,7 @@
           <h3 class="font-display text-2xl font-semibold text-navy mb-2">Enterprise</h3>
           <p class="text-gray-600 text-sm mb-6">Para clínicas u operaciones con necesidades particulares de puesta en marcha, soporte o integración.</p>
           <div class="mb-6">
-            <span class="text-5xl font-bold text-navy">Personalizado</span>
+            <span class="text-5xl font-bold text-navy enterprise-display">A medida</span>
           </div>
           <ul class="space-y-3 mb-8 text-sm text-gray-700">
             <li>Todo en Pro</li>
@@ -1067,14 +1103,418 @@
   </footer>
 
   <script>
+    const storageKeys = {
+      language: 'kareyVetLanguage',
+      theme: 'kareyVetTheme',
+    };
+
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const homeLink = document.querySelector('nav a[aria-label]');
+    const monthlyBtn = document.getElementById('monthly-btn');
+    const annualBtn = document.getElementById('annual-btn');
+    const pricingAmounts = document.querySelectorAll('.pricing-amount');
+    const languageButtons = document.querySelectorAll('[data-set-lang]');
+    const themeButtons = document.querySelectorAll('[data-set-theme]');
+    const interfaceControlGroups = document.querySelectorAll('.nav-switches, .mobile-switches');
+    const languageGroups = document.querySelectorAll('.ui-switch:not(.theme-switch)');
+    const themeGroups = document.querySelectorAll('.ui-switch.theme-switch');
+    const heroTitle = document.getElementById('hero-title');
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+
+    const normalizeText = (value) => value.replace(/\s+/g, ' ').trim();
+    const preserveWhitespace = (original, replacement) => {
+      const leading = original.match(/^\s*/)?.[0] ?? '';
+      const trailing = original.match(/\s*$/)?.[0] ?? '';
+      return `${leading}${replacement}${trailing}`;
+    };
+
+    const uiCopy = {
+      es: {
+        title: 'Karey Vet | Software para veterinarias que conecta agenda, pacientes y facturación',
+        description: 'Sistema de gestión veterinaria para organizar citas, pacientes, historial clínico, facturación, inventario y equipo desde una sola plataforma web.',
+        ogTitle: 'Karey Vet | Gestión veterinaria conectada',
+        ogDescription: 'Centraliza agenda, pacientes, historial clínico, facturación e inventario en una sola plataforma para clínicas veterinarias.',
+        homeLabel: 'Ir al inicio de Karey Vet',
+        interfaceControls: 'Controles de interfaz',
+        languageGroup: 'Idioma',
+        themeGroup: 'Tema',
+        openMenu: 'Abrir menú',
+        closeMenu: 'Cerrar menú',
+        lightTheme: 'Modo claro',
+        darkTheme: 'Modo oscuro',
+      },
+      en: {
+        title: 'Karey Vet | Veterinary software that connects scheduling, patients, and billing',
+        description: 'Veterinary management software to organize appointments, patients, clinical records, billing, inventory, and team operations from one web platform.',
+        ogTitle: 'Karey Vet | Connected veterinary management',
+        ogDescription: 'Centralize scheduling, patients, clinical records, billing, and inventory in one platform for veterinary clinics.',
+        homeLabel: 'Go to Karey Vet home',
+        interfaceControls: 'Interface controls',
+        languageGroup: 'Language',
+        themeGroup: 'Theme',
+        openMenu: 'Open menu',
+        closeMenu: 'Close menu',
+        lightTheme: 'Light mode',
+        darkTheme: 'Dark mode',
+      },
+    };
+
+    const specialHtml = {
+      heroTitle: {
+        element: heroTitle,
+        es: heroTitle.innerHTML,
+        en: 'Everything happening in your veterinary clinic, <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal to-navy">connected</span>',
+      },
+    };
+
+    const textTranslationsEn = {
+      'Producto': 'Product',
+      'Funciones': 'Features',
+      'Casos de uso': 'Use cases',
+      'Precios': 'Pricing',
+      'Solicitar demo': 'Request a demo',
+      'Gestión veterinaria en un solo lugar': 'Veterinary management in one place',
+      'Organiza citas, pacientes, historial clínico, facturación, inventario y equipo desde una sola plataforma para gestionar tu clínica con más orden.': 'Organize appointments, patients, clinical records, billing, inventory, and team operations from one platform built to keep your clinic running smoothly.',
+      'Ver cómo funciona': 'See how it works',
+      'Disponible': 'Available',
+      'Gestiona la operación completa de tu clínica.': 'Manage your clinic’s full operation.',
+      'Próximamente': 'Coming soon',
+      'App para Staff': 'Staff App',
+      'Una experiencia móvil para veterinarios y personal de la clínica.': 'A mobile experience for veterinarians and clinic staff.',
+      'App para Clientes': 'Client App',
+      'Un espacio para que los dueños sigan más de cerca el cuidado de sus mascotas.': 'A space for pet owners to stay closer to their pets’ care.',
+      'Agenda y citas': 'Appointments and scheduling',
+      'Today, panel del día': 'Today, daily overview',
+      'Pacientes e historial': 'Patients and records',
+      'Facturación y caja': 'Billing and checkout',
+      'Inventario': 'Inventory',
+      'Equipo y permisos': 'Team and permissions',
+      'Prueba visual del producto': 'Product preview',
+      'La operación se entiende mejor cuando se ve conectada': 'The workflow makes more sense when everything is connected',
+      'Desde la agenda hasta la facturación, cada módulo comparte el contexto necesario para que el equipo continúe el trabajo sin empezar de cero.': 'From scheduling to billing, each module shares the context your team needs to keep moving without starting from scratch.',
+      'Hoy': 'Today',
+      'Turnos activos': 'Live schedule',
+      'Próximas citas': 'Upcoming appointments',
+      'En espera': 'Waiting',
+      'En atención': 'In consultation',
+      'Confirmada': 'Confirmed',
+      'Atención': 'In consultation',
+      'El panel Today te ayuda a ver próximas citas, pacientes en espera, atenciones activas y pendientes del día desde un solo lugar.': 'The Today panel helps you see upcoming appointments, waiting patients, active consultations, and daily tasks from one place.',
+      'Agenda': 'Schedule',
+      'Confirmación': 'Confirmation',
+      'Pendiente': 'Pending',
+      'Recepción': 'Check-in',
+      'Organiza horarios, tipo de cita, confirmación y flujo del día sin depender de mensajes sueltos o agendas paralelas.': 'Organize timeslots, appointment type, confirmations, and your daily flow without relying on scattered messages or parallel calendars.',
+      'Paciente': 'Patient',
+      'Historial': 'Record',
+      'Vacuna próxima': 'Upcoming vaccine',
+      'Última visita': 'Last visit',
+      'Vacuna': 'Vaccine',
+      'Nota': 'Note',
+      'Refuerzo anual': 'Annual booster',
+      'Seguimiento digestivo': 'Digestive follow-up',
+      'Accede a mascota, visitas, vacunas, notas y adjuntos sin reconstruir el contexto en mitad de la consulta.': 'Access the pet profile, visits, vaccines, notes, and attachments without rebuilding context in the middle of a consultation.',
+      'Facturación': 'Billing',
+      'Lleva servicios y productos al cobro con subtotal, impuestos, pagos, impresión y PDF sin salir del flujo de atención.': 'Move services and products into checkout with subtotals, taxes, payments, printing, and PDF output without leaving the care flow.',
+      'Consulta general': 'General consultation',
+      'Vacuna séxtuple': 'Six-way vaccine',
+      'Subtotal': 'Subtotal',
+      'Impuestos': 'Taxes',
+      'Total': 'Total',
+      'Stock bajo': 'Low stock',
+      'Mínimos, movimientos y alertas para no enterarse tarde de lo que falta.': 'Minimums, movements, and alerts so you know what is missing before it becomes urgent.',
+      'Controla catálogo, SKU, costos, stock mínimo y movimientos para anticiparte a faltantes reales.': 'Manage catalog, SKU, costs, minimum stock, and movements to stay ahead of real shortages.',
+      'Resumen': 'Overview',
+      'Citas': 'Appointments',
+      'Vacunas próximas': 'Upcoming vaccines',
+      'Un panorama rápido para revisar agenda, operación, inventario y seguimiento desde el mismo tablero.': 'A quick view of schedule, operations, inventory, and follow-up from the same dashboard.',
+      'Consulta rápidamente citas, vacunas próximas, alertas de inventario y otros puntos que necesitan atención durante el día.': 'Quickly review appointments, upcoming vaccines, inventory alerts, and other items that need attention during the day.',
+      'El problema': 'The problem',
+      'Administrar una veterinaria no debería depender de cinco lugares diferentes': 'Running a veterinary clinic should not depend on five different places',
+      'Cuando las citas están en un chat, el historial en otro sistema, los pagos se reconstruyen al final y el inventario se lleva aparte, la clínica pierde tiempo y contexto.': 'When appointments live in chats, records sit in another system, payments are rebuilt at the end, and inventory is managed elsewhere, the clinic loses time and context.',
+      'Agenda fragmentada': 'Fragmented scheduling',
+      'Citas, cambios y confirmaciones quedan repartidos entre WhatsApp, llamadas, agendas físicas y memoria del equipo.': 'Appointments, changes, and confirmations end up spread across WhatsApp, calls, paper agendas, and the team’s memory.',
+      'Pacientes sin contexto inmediato': 'Patients without immediate context',
+      'Última visita, vacunas, notas y documentos no siempre aparecen cuando el equipo más los necesita.': 'Last visit, vaccines, notes, and documents do not always show up when the team needs them most.',
+      'Operación difícil de coordinar': 'Operations that are hard to coordinate',
+      'Recepción, espera, atención, completados y paso a caja no siempre se ven con claridad durante el día.': 'Check-in, waiting, consultations, completed visits, and checkout are not always easy to follow throughout the day.',
+      'Cobros e inventario desconectados': 'Billing and inventory disconnected',
+      'Al terminar la consulta todavía toca reconstruir servicios, productos, pagos y faltantes de forma manual.': 'At the end of a consultation, services, products, payments, and missing items still have to be rebuilt manually.',
+      'La solución': 'The solution',
+      'Una plataforma para conectar toda la operación': 'One platform to connect your full operation',
+      'La fuerza de Karey Vet no está en módulos aislados. Está en cómo agenda, recepción, atención, historial, cobro y seguimiento se alimentan entre sí.': 'Karey Vet is strongest when scheduling, check-in, consultations, records, billing, and follow-up all feed into each other.',
+      'Recepción': 'Check-in',
+      'Consulta': 'Consultation',
+      'Factura': 'Invoice',
+      'Pago': 'Payment',
+      'Seguimiento': 'Follow-up',
+      'Menos herramientas separadas': 'Fewer disconnected tools',
+      'Agenda, perfiles, cobros e inventario viven en el mismo sistema para que el equipo no salte entre procesos inconexos.': 'Scheduling, profiles, billing, and inventory live in the same system so your team does not bounce between disconnected processes.',
+      'Más coordinación diaria': 'More day-to-day coordination',
+      'Today y los estados de atención ayudan a entender quién llega, quién espera, quién terminó y quién debe pasar a caja.': 'Today and visit statuses help everyone understand who is arriving, who is waiting, who is done, and who needs to move to checkout.',
+      'Seguimiento mejor preparado': 'Better prepared follow-up',
+      'Visitas, vacunas y recordatorios quedan organizados para el próximo paso, sin depender por completo de memoria manual.': 'Visits, vaccines, and reminders stay organized for the next step without depending entirely on memory.',
+      'Demostración del flujo': 'Workflow demo',
+      'Así se mueve un paciente por Karey Vet': 'How a patient moves through Karey Vet',
+      'Desde que se agenda una cita hasta el seguimiento posterior, Karey Vet mantiene la información conectada durante cada etapa de la atención.': 'From scheduling an appointment to post-visit follow-up, Karey Vet keeps information connected through every stage of care.',
+      'Se registra la cita con horario, tipo de atención y estado de confirmación para que el día empiece ordenado.': 'The appointment is recorded with time, visit type, and confirmation status so the day starts organized.',
+      'Llega el paciente': 'The patient arrives',
+      'La cita aparece en Today para que el equipo vea con claridad pacientes en recepción, en espera y pacientes sin cita.': 'The appointment appears in Today so the team can clearly see check-ins, waiting patients, and walk-in visits.',
+      'Veterinarios y personal acceden al paciente, registran la visita y consultan historial, vacunas y archivos clínicos.': 'Veterinarians and staff access the patient, record the visit, and review history, vaccines, and clinical files.',
+      'Servicios y productos pasan al proceso de cobro con descuentos, impuestos, pagos e impresión o PDF cuando corresponde.': 'Services and products move into billing with discounts, taxes, payments, and printing or PDF output when needed.',
+      'El historial queda organizado para próximas visitas, vacunas y seguimientos, manteniendo el contexto de cada paciente.': 'The record stays organized for future visits, vaccines, and follow-up while preserving each patient’s context.',
+      'Capacidades': 'Capabilities',
+      'Todo lo que necesitas para gestionar tu clínica': 'Everything you need to manage your clinic',
+      'Herramientas para acompañar el trabajo de recepción, veterinarios, caja y administración desde una plataforma conectada.': 'Tools that support reception, veterinarians, checkout, and administration from one connected platform.',
+      'Calendario y vista lista': 'Calendar and list view',
+      'Asignación y conflictos': 'Assignment and conflicts',
+      'Confirmación y recordatorios': 'Confirmations and reminders',
+      'Operación de hoy': 'Today’s operations',
+      'Panel Today y flujo del día': 'Today panel and daily flow',
+      'Pacientes con cita y sin cita': 'Scheduled and walk-in patients',
+      'Estados de atención y paso a caja': 'Visit statuses and checkout handoff',
+      'Clientes y pacientes': 'Clients and patients',
+      'Dueños y mascotas': 'Owners and pets',
+      'Visitas e historial': 'Visits and records',
+      'Vacunas y adjuntos médicos': 'Vaccines and medical attachments',
+      'Servicios y productos': 'Services and products',
+      'Descuentos, impuestos y pagos': 'Discounts, taxes, and payments',
+      'Impresión y PDF': 'Printing and PDF',
+      'Catálogo, SKU y costos': 'Catalog, SKU, and costs',
+      'Stock y stock mínimo': 'Stock and minimum stock',
+      'Movimientos y alertas': 'Movements and alerts',
+      'Empleados e invitaciones': 'Employees and invitations',
+      'Roles y permisos': 'Roles and permissions',
+      'Activación y desactivación de miembros': 'Member activation and deactivation',
+      'Clínica': 'Clinic',
+      'Logo, contactos y dirección': 'Logo, contacts, and address',
+      'Horarios y datos fiscales': 'Business hours and tax details',
+      'Datos bancarios y notas de factura': 'Banking details and invoice notes',
+      'Recordatorios': 'Reminders',
+      'Seguimiento de citas': 'Appointment follow-up',
+      'Recordatorios relacionados con vacunas': 'Vaccine-related reminders',
+      'Seguimiento de citas y vacunas': 'Appointment and vaccine follow-up',
+      'A quién va dirigido': 'Who it is for',
+      'Diseñado para el equipo que mantiene la clínica en movimiento': 'Built for the team that keeps the clinic moving',
+      'Karey Vet no está pensado solo para el veterinario. Está hecho para coordinar mejor a toda la clínica.': 'Karey Vet is not only for veterinarians. It helps the whole clinic stay in sync.',
+      'Dueño o administrador': 'Owner or manager',
+      'Necesita visibilidad de la operación y control sobre la información de la clínica, el equipo, los productos y los cobros.': 'Needs visibility into operations and control over clinic information, team access, products, and billing.',
+      'Recepción': 'Reception',
+      'Gestiona agenda, llegada de pacientes, clientes, cambios y el flujo del día desde un mismo lugar.': 'Handles scheduling, patient arrivals, clients, changes, and the daily flow from one place.',
+      'Veterinario': 'Veterinarian',
+      'Consulta pacientes, historial, visitas, vacunas, archivos y contexto clínico durante la atención.': 'Reviews patients, records, visits, vaccines, files, and clinical context during care.',
+      'Caja y personal operativo': 'Checkout and operations staff',
+      'Continúa el proceso hacia facturación, productos, pagos e inventario sin reconstruir la consulta a mano.': 'Keeps the process moving toward billing, products, payments, and inventory without rebuilding the visit by hand.',
+      'Así ayuda Karey Vet durante un día de trabajo': 'How Karey Vet helps throughout the workday',
+      'Desde organizar las primeras citas hasta cerrar una factura, Karey Vet mantiene la información conectada durante toda la jornada.': 'From organizing the first appointments to closing an invoice, Karey Vet keeps information connected throughout the day.',
+      'Organizar el inicio del día': 'Organize the start of the day',
+      'Revisa citas, pacientes y pendientes desde Today para empezar la jornada con más visibilidad y menos sorpresas operativas.': 'Review appointments, patients, and pending tasks from Today to start the day with more visibility and fewer surprises.',
+      'Atender un paciente con contexto': 'Treat a patient with full context',
+      'Accede rápido a historial, visitas, vacunas y documentos para dedicar menos tiempo a buscar información durante la consulta.': 'Quickly access records, visits, vaccines, and documents so you spend less time searching during consultations.',
+      'Gestionar pacientes sin cita': 'Handle walk-in patients',
+      'Registra un paciente sin cita y sigue su estado dentro del flujo del día para mantener el orden cuando aparece lo imprevisto.': 'Register a walk-in patient and track their status within the day’s flow to stay organized when something unexpected happens.',
+      'Pasar de consulta a caja': 'Move from consultation to checkout',
+      'Lleva servicios y productos al cobro sin volver a armar todo manualmente y reduce el retrabajo al facturar.': 'Move services and products to checkout without rebuilding everything manually and reduce rework at billing time.',
+      'Evitar quedarse sin productos': 'Avoid running out of products',
+      'Usa mínimos, movimientos y alertas para anticiparte y mantener mejor control sobre insumos y productos clave.': 'Use minimums, movements, and alerts to stay ahead and keep better control over supplies and key products.',
+      'Mantener organizado el equipo': 'Keep the team organized',
+      'Invita colaboradores, asigna roles y define permisos. Resultado: cada persona entra con el acceso que necesita.': 'Invite collaborators, assign roles, and define permissions so everyone has the access they need.',
+      'Cómo funciona': 'How it works',
+      'Empieza por la base y centraliza tu operación': 'Start with the essentials and centralize your operation',
+      'Configura tu clínica': 'Set up your clinic',
+      'Añade horarios, servicios, productos, datos fiscales y miembros del equipo para comenzar con una estructura adaptada a tu operación.': 'Add schedules, services, products, tax details, and team members to start with a structure that fits your operation.',
+      'Lleva tu operación a Karey Vet': 'Bring your operation into Karey Vet',
+      'Organiza clientes, mascotas, citas e historial en un mismo lugar para que la información esté siempre a mano.': 'Organize clients, pets, appointments, and records in one place so information is always within reach.',
+      'Opera el día desde un mismo lugar': 'Run the day from one place',
+      'Coordina recepción, atención, facturación y seguimiento manteniendo el contexto de cada paciente durante toda la jornada.': 'Coordinate reception, care, billing, and follow-up while keeping each patient’s context throughout the day.',
+      'Plataformas': 'Platforms',
+      'Karey Vet acompaña a la clínica hoy y sigue creciendo': 'Karey Vet supports your clinic today and keeps growing',
+      'Gestiona tu clínica desde Karey Vet Web. Muy pronto, el equipo y los clientes también podrán contar con experiencias móviles pensadas para su día a día.': 'Manage your clinic from Karey Vet Web. Soon, both staff and clients will also have mobile experiences built for their day-to-day needs.',
+      'Gestiona las principales operaciones de tu clínica desde cualquier navegador, ya sea en recepción, consulta o administración.': 'Manage the core operations of your clinic from any browser, whether you are in reception, consultation, or administration.',
+      'Dashboard y operación del día': 'Dashboard and daily operations',
+      'Agenda, pacientes e historial clínico': 'Scheduling, patients, and clinical records',
+      'Facturación, inventario, equipo y permisos': 'Billing, inventory, team, and permissions',
+      'Una experiencia móvil para que veterinarios y personal puedan consultar y gestionar información clave de la clínica desde donde la necesiten.': 'A mobile experience so veterinarians and staff can access and manage key clinic information wherever they need it.',
+      'Acceso para el equipo': 'Access for your team',
+      'Información clave desde el móvil': 'Key information from mobile',
+      'Experiencia adaptada al trabajo diario': 'Built for daily work',
+      'Un espacio para que los dueños puedan mantenerse más conectados con el cuidado y seguimiento de sus mascotas.': 'A space for owners to stay more connected to their pets’ care and follow-up.',
+      'Información y seguimiento del paciente': 'Patient information and follow-up',
+      'Mayor cercanía con la clínica': 'Closer connection with the clinic',
+      'Una experiencia simple para los dueños': 'A simple experience for owners',
+      'Planes según las necesidades de tu clínica': 'Plans built around your clinic’s needs',
+      'Elige el plan que mejor se adapte al tamaño de tu equipo y a la forma en que gestionas tu clínica.': 'Choose the plan that best fits your team size and how you manage your clinic.',
+      'Mensual': 'Monthly',
+      'Anual': 'Annual',
+      '(20% de descuento)': '(20% off)',
+      'Lo esencial para organizar citas, pacientes y cobros desde un mismo lugar.': 'Everything you need to organize appointments, patients, and billing from one place.',
+      'Más herramientas para fortalecer el control clínico, el inventario y la organización del equipo.': 'More tools to strengthen clinical control, inventory, and team organization.',
+      'Acompañamiento para clínicas u operaciones con necesidades particulares de puesta en marcha y soporte.': 'Support for clinics or operations with more specific rollout and support needs.',
+      'Para clínicas pequeñas que quieren dejar atrás procesos dispersos y organizar su operación diaria desde un solo lugar.': 'For smaller clinics ready to leave scattered processes behind and organize daily operations from one place.',
+      '1 clínica': '1 clinic',
+      'Hasta 3 usuarios staff': 'Up to 3 staff users',
+      'Dashboard y panel Today': 'Dashboard and Today panel',
+      'Clientes y mascotas': 'Clients and pets',
+      'Servicios, facturación y perfil de clínica': 'Services, billing, and clinic profile',
+      'Para clínicas que necesitan mayor control clínico, inventario, seguimiento y organización del equipo.': 'For clinics that need stronger clinical control, inventory oversight, follow-up, and team organization.',
+      'Todo en Starter': 'Everything in Starter',
+      'Usuarios staff ilimitados': 'Unlimited staff users',
+      'Historial clínico, visitas y adjuntos': 'Clinical records, visits, and attachments',
+      'Vacunas y seguimiento de pacientes': 'Vaccines and patient follow-up',
+      'Inventario y alertas de stock': 'Inventory and stock alerts',
+      'Roles, permisos y recordatorios': 'Roles, permissions, and reminders',
+      'MÁS POPULAR': 'MOST POPULAR',
+      'Para clínicas u operaciones con necesidades particulares de puesta en marcha, soporte o integración.': 'For clinics or operations with specific rollout, support, or integration needs.',
+      'A medida': 'Custom',
+      'Configuración acompañada': 'Guided setup',
+      'Asistencia con migración de información': 'Help with data migration',
+      'Soporte prioritario': 'Priority support',
+      'Evaluación de integraciones': 'Integration assessment',
+      'Acompañamiento durante la puesta en marcha': 'Guidance during rollout',
+      'Hablar con ventas': 'Talk to sales',
+      'Preguntas frecuentes': 'Frequently asked questions',
+      '¿Karey Vet funciona desde el navegador?': 'Does Karey Vet work in the browser?',
+      'Sí. Karey Vet funciona desde el navegador, para que puedas gestionar la clínica desde distintos equipos sin depender de una instalación compleja.': 'Yes. Karey Vet works in the browser so you can manage the clinic from different devices without depending on a complex installation.',
+      '¿Puedo gestionar varios empleados?': 'Can I manage multiple employees?',
+      'Sí. Karey Vet incluye empleados, invitaciones, roles y permisos para organizar cómo accede cada miembro del equipo.': 'Yes. Karey Vet includes employees, invitations, roles, and permissions so you can organize how each team member gets access.',
+      '¿Puedo manejar citas y pacientes sin cita?': 'Can I manage appointments and walk-in patients?',
+      'Sí. Puedes organizar citas desde calendario o lista y también registrar pacientes sin cita dentro del flujo diario de la clínica.': 'Yes. You can manage appointments from the calendar or list view and also register walk-in patients within the clinic’s daily workflow.',
+      '¿Puedo llevar historial y vacunas?': 'Can I manage records and vaccines?',
+      'Sí. Karey Vet permite trabajar con pacientes, visitas, historial, vacunas y archivos o adjuntos médicos dentro del perfil clínico.': 'Yes. Karey Vet lets you work with patients, visits, records, vaccines, and medical files or attachments within the clinical profile.',
+      '¿Karey Vet incluye facturación?': 'Does Karey Vet include billing?',
+      'Sí. Incluye facturas, POS, servicios, productos, descuentos, impuestos, pagos y salida por impresión o PDF.': 'Yes. It includes invoices, POS, services, products, discounts, taxes, payments, and printed or PDF output.',
+      '¿Puedo controlar inventario?': 'Can I manage inventory?',
+      'Sí. Puedes llevar catálogo de productos, stock, movimientos, mínimos y alertas para mantener mejor control del inventario.': 'Yes. You can manage a product catalog, stock, movements, minimums, and alerts for stronger inventory control.',
+      '¿Cómo funcionan los recordatorios?': 'How do reminders work?',
+      'Karey Vet ayuda a tu clínica a organizar el seguimiento de citas y vacunas, reduciendo la dependencia de controles manuales y manteniendo la información vinculada a cada paciente.': 'Karey Vet helps your clinic organize appointment and vaccine follow-up, reducing reliance on manual checks and keeping information tied to each patient.',
+      '¿Las aplicaciones para Staff y Clientes ya están disponibles?': 'Are the Staff and Client apps already available?',
+      'Todavía no. Las apps para Staff y Clientes se encuentran en desarrollo y estarán disponibles próximamente.': 'Not yet. The Staff and Client apps are in development and will be available soon.',
+      '¿Necesito instalar algo?': 'Do I need to install anything?',
+      'No necesariamente. Karey Vet Web puede usarse desde el navegador y ofrecer una experiencia adaptable sin requerir una app nativa instalada.': 'Not necessarily. Karey Vet Web can be used from the browser and gives you a flexible experience without requiring a native app installation.',
+      '¿Puedo solicitar una demostración?': 'Can I request a demo?',
+      'Sí. Puedes solicitar una demostración para conocer Karey Vet, revisar sus principales funciones y ver cómo puede adaptarse a la operación diaria de tu clínica.': 'Yes. You can request a demo to get to know Karey Vet, review its core features, and see how it can fit your clinic’s day-to-day operation.',
+      'Descubre cómo Karey Vet puede ayudarte a organizar tu clínica': 'See how Karey Vet can help you organize your clinic',
+      'Solicita una demostración y conoce cómo Karey Vet conecta agenda, pacientes, atención, facturación e inventario en una sola plataforma.': 'Request a demo and see how Karey Vet connects scheduling, patients, care, billing, and inventory in one platform.',
+      'Conoce las funciones': 'Explore the features',
+      'Explora las herramientas disponibles para agenda, pacientes, historial, facturación, inventario y equipo.': 'Explore the tools available for scheduling, patients, records, billing, inventory, and team management.',
+      'Así ayuda a tu equipo': 'How it supports your team',
+      'Descubre cómo mejora la coordinación entre recepción, veterinarios, administración y caja durante la jornada.': 'See how it improves coordination between reception, veterinarians, administration, and checkout throughout the day.',
+      'Resuelve tus dudas': 'Get your questions answered',
+      'Revisa los planes disponibles y conversemos sobre las necesidades particulares de tu clínica.': 'Review the available plans and let’s talk about the specific needs of your clinic.',
+      'Revisar planes': 'View plans',
+      '© 2026 Karey Vet. Todos los derechos reservados.': '© 2026 Karey Vet. All rights reserved.',
+      'Privacidad': 'Privacy',
+      'Términos': 'Terms',
+    };
+
+    const translatableTextNodes = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || parent.closest('script, style')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        const normalized = normalizeText(node.textContent);
+        if (!normalized) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return Object.prototype.hasOwnProperty.call(textTranslationsEn, normalized)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_SKIP;
+      },
+    });
+
+    let currentNode;
+    while ((currentNode = walker.nextNode())) {
+      const normalized = normalizeText(currentNode.textContent);
+      translatableTextNodes.push({
+        node: currentNode,
+        es: currentNode.textContent,
+        en: preserveWhitespace(currentNode.textContent, textTranslationsEn[normalized]),
+      });
+    }
+
+    let currentLanguage = localStorage.getItem(storageKeys.language) || 'es';
+    let currentTheme = localStorage.getItem(storageKeys.theme) || 'light';
 
     function setMobileMenuState(isOpen) {
       mobileMenu.classList.toggle('translate-y-full', !isOpen);
       mobileMenu.setAttribute('aria-hidden', String(!isOpen));
       mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
-      mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      mobileMenuBtn.setAttribute('aria-label', isOpen ? uiCopy[currentLanguage].closeMenu : uiCopy[currentLanguage].openMenu);
+    }
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.body.setAttribute('data-theme', theme);
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', theme === 'dark' ? '#07111E' : '#2D3A66');
+      }
+
+      themeButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.setTheme === theme);
+      });
+
+      localStorage.setItem(storageKeys.theme, theme);
+    }
+
+    function applyLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+
+      translatableTextNodes.forEach((entry) => {
+        entry.node.textContent = language === 'en' ? entry.en : entry.es;
+      });
+
+      Object.values(specialHtml).forEach((entry) => {
+        entry.element.innerHTML = entry[language];
+      });
+
+      const copy = uiCopy[language];
+      document.title = copy.title;
+      if (metaDescription) {
+        metaDescription.setAttribute('content', copy.description);
+      }
+      if (ogTitle) {
+        ogTitle.setAttribute('content', copy.ogTitle);
+      }
+      if (ogDescription) {
+        ogDescription.setAttribute('content', copy.ogDescription);
+      }
+      if (homeLink) {
+        homeLink.setAttribute('aria-label', copy.homeLabel);
+      }
+
+      interfaceControlGroups.forEach((group) => {
+        group.setAttribute('aria-label', copy.interfaceControls);
+      });
+
+      languageGroups.forEach((group) => {
+        group.setAttribute('aria-label', copy.languageGroup);
+      });
+
+      themeGroups.forEach((group) => {
+        group.setAttribute('aria-label', copy.themeGroup);
+      });
+
+      themeButtons.forEach((button) => {
+        button.setAttribute('aria-label', button.dataset.setTheme === 'light' ? copy.lightTheme : copy.darkTheme);
+      });
+
+      const isMenuOpen = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-label', isMenuOpen ? copy.closeMenu : copy.openMenu);
+
+      languageButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.setLang === language);
+      });
+
+      localStorage.setItem(storageKeys.language, language);
     }
 
     mobileMenuBtn.addEventListener('click', () => {
@@ -1095,9 +1535,17 @@
       }
     });
 
-    const monthlyBtn = document.getElementById('monthly-btn');
-    const annualBtn = document.getElementById('annual-btn');
-    const pricingAmounts = document.querySelectorAll('.pricing-amount');
+    languageButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        applyLanguage(button.dataset.setLang);
+      });
+    });
+
+    themeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        applyTheme(button.dataset.setTheme);
+      });
+    });
 
     monthlyBtn.addEventListener('click', () => {
       monthlyBtn.classList.add('bg-gradient-to-r', 'from-teal', 'to-navy', 'text-white');
@@ -1120,6 +1568,10 @@
         amount.textContent = amount.getAttribute('data-annual');
       });
     });
+
+    applyLanguage(currentLanguage);
+    applyTheme(currentTheme);
+    setMobileMenuState(false);
 
     (function() {
       const style = document.createElement('style');
