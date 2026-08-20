@@ -1995,6 +1995,12 @@ button:focus-visible {
   gap: 0.85rem;
 }
 
+.mobile-menu-panel {
+  justify-content: flex-start;
+  padding: 8.5rem 1.5rem 2rem;
+  overflow-y: auto;
+}
+
 .ui-switch {
   display: inline-flex;
   align-items: center;
@@ -2047,10 +2053,12 @@ button:focus-visible {
 
 .enterprise-display {
   display: block;
-  font-size: clamp(2.8rem, 2vw, 4.8rem);
-  line-height: 0.94;
-  letter-spacing: -0.04em;
+  max-width: 100%;
+  font-size: clamp(1.55rem, 3vw, 2.7rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
   overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 body[data-theme="dark"] {
@@ -2114,7 +2122,7 @@ body[data-theme="dark"] .preview-row,
 body[data-theme="dark"] .preview-profile,
 body[data-theme="dark"] .flow-rail {
   border-color: rgb(148 163 184 / 0.18);
-  background-color: rgb(12 22 38 / 0.92);
+  background: linear-gradient(135deg, rgb(12 22 38 / 0.96), rgb(7 17 30 / 0.98));
 }
 
 body[data-theme="dark"] .preview-row-strong {
@@ -2145,9 +2153,20 @@ body[data-theme="dark"] .preview-pill-navy {
 }
 
 body[data-theme="dark"] .flow-node {
-  background-color: rgb(13 148 136 / 0.12);
-  border-color: rgb(45 212 191 / 0.22);
-  color: #eef5ff;
+  background: linear-gradient(135deg, rgb(13 148 136 / 0.22), rgb(45 58 102 / 0.34));
+  border-color: rgb(94 234 212 / 0.26);
+  color: #f8fbff;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.04);
+}
+
+body[data-theme="dark"] .flow-arrow {
+  color: #5eead4;
+}
+
+body[data-theme="dark"] .solution-section {
+  background:
+    radial-gradient(circle at top center, rgb(13 148 136 / 0.08), transparent 30%),
+    linear-gradient(180deg, #0a1526 0%, #07111e 100%);
 }
 
 body[data-theme="dark"] .ui-switch {
@@ -2190,12 +2209,18 @@ body[data-theme="dark"] .selection\:bg-teal-100::selection {
     flex-direction: column;
   }
 
+  .mobile-menu-panel {
+    padding-top: 9.5rem;
+    gap: 2rem;
+  }
+
   .ui-switch-btn {
     min-width: 2.7rem;
   }
 
   .enterprise-display {
-    font-size: clamp(2.35rem, 13vw, 4rem);
+    font-size: clamp(1.5rem, 8vw, 2.2rem);
+    line-height: 0.92;
   }
 
   .preview-kpis {
@@ -2217,6 +2242,13 @@ body[data-theme="dark"] .selection\:bg-teal-100::selection {
 
   .flow-rail {
     justify-content: flex-start;
+    padding: 1.1rem;
+    gap: 0.65rem;
+  }
+
+  .flow-node {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
   }
 
   .flow-arrow {
