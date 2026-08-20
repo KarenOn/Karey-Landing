@@ -1,0 +1,14 @@
+{
+  "name": "karey-vet",
+  "version": "1.0.0",
+  "description": "vet care app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kiskeya Core",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^4.1.18"
+  }
+}

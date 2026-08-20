@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karey Vet | Plataforma Todo-en-Uno para Veterinarias</title>
+  <meta name="description" content="Sistema completo de gestión veterinaria con Web Admin, App para Staff y App para Clientes. Agenda, historial clínico, vacunas, inventario y más.">
+  <link rel="icon" type="image/png" href="assets/images/Diseno_sin_titulo_1_-removebg-preview.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fkareyvet5443back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.16"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="antialiased bg-white text-gray-800 selection:bg-teal-100 selection:text-teal-900">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.1s both;">
+    <div class="flex justify-center px-4 pt-6">
+      <div class="bg-white/90 backdrop-blur-xl border border-gray-200 rounded-sm shadow-lg w-full max-w-6xl px-6 py-4 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="assets/images/Diseno_sin_titulo_1_-removebg-preview.png" alt="Karey Vet Logo" class="h-10 w-auto object-contain">
+          <span class="font-display text-2xl font-semibold text-navy tracking-tight">Karey Vet</span>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#features" class="text-gray-600 hover:text-teal transition-colors">Features</a>
+          <a href="#platforms" class="text-gray-600 hover:text-teal transition-colors">Platforms</a>
+          <a href="#pricing" class="text-gray-600 hover:text-teal transition-colors">Pricing</a>
+          <a href="#faq" class="text-gray-600 hover:text-teal transition-colors">FAQ</a>
+          <a href="#contact" class="bg-gradient-to-r from-teal to-navy text-white px-6 py-2 rounded-sm hover:opacity-90 transition-opacity">Start Free Trial</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-y-full transition-transform duration-500">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="#features" class="text-3xl font-display text-navy hover:text-teal transition-colors">Features</a>
+      <a href="#platforms" class="text-3xl font-display text-navy hover:text-teal transition-colors">Platforms</a>
+      <a href="#pricing" class="text-3xl font-display text-navy hover:text-teal transition-colors">Pricing</a>
+      <a href="#faq" class="text-3xl font-display text-navy hover:text-teal transition-colors">FAQ</a>
+      <a href="#contact" class="text-3xl font-display text-navy hover:text-teal transition-colors">Contact</a>
+      <button class="bg-gradient-to-r from-teal to-navy text-white px-8 py-3 rounded-sm text-lg">Start Free Trial</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+    <!-- Large turtle background image - behind everything -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none">
+      <img src="assets/images/Diseno_sin_titulo_1_-removebg-preview.png" alt="" class="w-full h-full max-w-6xl object-contain">
+    </div>
+
+    <!-- Animated gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-teal/10 via-navy/5 to-teal/10"></div>
+    <div class="absolute inset-0 bg-gradient-to-tl from-navy/10 via-transparent to-teal/10 animate-pulse"></div>
+    
+    <!-- Decorative gradient orbs -->
+    <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-teal/20 to-navy/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-navy/20 to-teal/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <!-- Tag -->
+      <div class="flex justify-center mb-8 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.3s both;">
+        <div class="inline-flex items-center gap-2 border border-teal/30 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+          <div class="w-2 h-2 bg-teal rounded-full animate-pulse"></div>
+          <span class="text-xs font-medium text-teal uppercase tracking-wider">Web + iOS + Android</span>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <div class="text-center mb-12 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.5s both;">
+        <h1 class="font-display text-5xl md:text-7xl font-bold text-navy leading-tight mb-6">
+          La plataforma <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal to-navy">todo-en-uno</span><br>
+          para tu veterinaria
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          Web Admin + App para staff + App para dueños de mascotas. Agenda, historial, vacunas, inventario y facturación en un solo sistema.
+        </p>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.7s both;">
+        <a href="#contact" class="bg-gradient-to-r from-teal to-navy text-white px-8 py-4 rounded-sm font-semibold text-lg hover:opacity-90 transition-all hover:shadow-2xl hover:scale-105 text-center">
+          Start Free Trial
+        </a>
+        <a href="#demo" class="border-2 border-navy bg-white/80 backdrop-blur-sm text-navy px-8 py-4 rounded-sm font-semibold text-lg hover:bg-navy hover:text-white transition-all hover:shadow-xl text-center">
+          See Demo
+        </a>
+      </div>
+
+      <!-- Hero Visual with enhanced logo integration -->
+      <div class="relative animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.9s both;">
+        <div class="relative max-w-5xl mx-auto">
+          
+          <!-- Main logo display with gradient border -->
+          <!-- <div class="relative flex justify-center mb-12">
+            <div class="relative p-8 bg-white/90 backdrop-blur-xl rounded-sm shadow-2xl border-2 border-transparent bg-clip-padding">
+              <div class="absolute inset-0 rounded-sm bg-gradient-to-br from-teal via-navy to-teal opacity-20 blur-sm"></div>
+              <img src="assets/images/Diseno_sin_titulo_1_-removebg-preview.png" alt="Karey Vet Platform Showcase" class="relative w-full max-w-md h-auto object-contain">
+            </div>
+          </div> -->
+          
+          <!-- Platform mockup placeholders with gradient effects -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Web Dashboard -->
+            <div class="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-sm p-6 aspect-[4/3] flex flex-col items-center justify-center hover:border-teal transition-all hover:shadow-xl hover:scale-105">
+              <div class="absolute inset-0 rounded-sm bg-gradient-to-br from-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <svg class="relative w-16 h-16 text-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span class="relative text-sm font-semibold text-navy">Web Admin</span>
+              <span class="relative text-xs text-gray-500">Dashboard completo</span>
+            </div>
+
+            <!-- Staff App -->
+            <div class="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-sm p-6 aspect-[4/3] flex flex-col items-center justify-center hover:border-navy transition-all hover:shadow-xl hover:scale-105">
+              <div class="absolute inset-0 rounded-sm bg-gradient-to-br from-navy/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <svg class="relative w-16 h-16 text-navy mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+              <span class="relative text-sm font-semibold text-navy">App Staff</span>
+              <span class="relative text-xs text-gray-500">iOS / Android</span>
+            </div>
+
+            <!-- Client App -->
+            <div class="group relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-sm p-6 aspect-[4/3] flex flex-col items-center justify-center hover:border-teal transition-all hover:shadow-xl hover:scale-105">
+              <div class="absolute inset-0 rounded-sm bg-gradient-to-br from-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <svg class="relative w-16 h-16 text-teal mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+              <span class="relative text-sm font-semibold text-navy">App Cliente</span>
+              <span class="relative text-xs text-gray-500">iOS / Android</span>
+            </div>
+          </div>
+
+          <!-- Floating gradient elements -->
+          <div class="absolute -top-10 left-20 w-32 h-32 bg-gradient-to-br from-teal/10 to-navy/10 rounded-full blur-2xl animate-pulse"></div>
+          <div class="absolute -bottom-10 right-20 w-40 h-40 bg-gradient-to-tl from-navy/10 to-teal/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Marquee -->
+  <section class="border-y border-gray-200 bg-gray-50 py-4 overflow-hidden">
+    <div class="flex animate-marquee">
+      <div class="flex items-center gap-12 whitespace-nowrap px-6">
+        <span class="text-sm font-medium text-gray-600">Agenda Inteligente</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Historial Clínico</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Vacunas y Recordatorios</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Facturación</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Inventario</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Notificaciones</span>
+        <span class="text-gray-400">+</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="text-sm font-medium text-gray-600">Agenda Inteligente</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Historial Clínico</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Vacunas y Recordatorios</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Facturación</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Inventario</span>
+        <span class="text-gray-400">+</span>
+        <span class="text-sm font-medium text-gray-600">Notificaciones</span>
+        <span class="text-gray-400">+</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Platforms Section -->
+  <section id="platforms" class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-teal uppercase tracking-wider mb-2 block">Tres Plataformas Integradas</span>
+        <h2 class="font-display text-4xl md:text-6xl font-bold text-navy mb-4">Todo conectado en tiempo real</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Web, staff y clientes sincronizados. Cada cambio se refleja instantáneamente en todas las plataformas.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Web Admin Card -->
+        <div class="bg-white border border-gray-200 rounded-sm p-8 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+          <div class="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-navy mb-4">Web Admin</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Panel de control completo para gestionar toda tu clínica desde cualquier navegador.</p>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Dashboard con reportes en tiempo real</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Inventario y alertas de stock</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Facturación y control de pagos</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Gestión de clientes y mascotas</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Staff App Card -->
+        <div class="bg-white border border-gray-200 rounded-sm p-8 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+          <div class="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-navy mb-4">App Staff</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">Acceso móvil para veterinarios y personal de la clínica. iOS y Android.</p>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-navy mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Ver citas del día en tiempo real</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-navy mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Acceso rápido a pacientes y mascotas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-navy mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Registrar notas y visitas desde móvil</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-navy mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Notificaciones internas instantáneas</span>
+            </li>
+          </ul>
+          <div class="flex gap-2 mt-6">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full text-gray-600">iOS</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full text-gray-600">Android</span>
+          </div>
+        </div>
+
+        <!-- Client App Card -->
+        <div class="bg-white border border-gray-200 rounded-sm p-8 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+          <div class="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-navy mb-4">App Cliente</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">App para dueños de mascotas. Transparencia total y recordatorios automáticos.</p>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Ver historial médico completo</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Recordatorios de vacunas y citas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Acceso a facturas y pagos</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Datos de mascotas y recomendaciones</span>
+            </li>
+          </ul>
+          <div class="flex gap-2 mt-6">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full text-gray-600">iOS</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full text-gray-600">Android</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid Section -->
+  <section id="features" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-teal uppercase tracking-wider mb-2 block">Funcionalidades Completas</span>
+        <h2 class="font-display text-4xl md:text-6xl font-bold text-navy mb-4">Todo lo que necesitas</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Desde la primera cita hasta el seguimiento post-consulta. Karey Vet cubre cada aspecto de tu clínica.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-lg transition-all animate-on-scroll">
+          <div class="w-10 h-10 bg-teal/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 00-2-2V5a2 2 0 002-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy text-lg mb-2">Agenda Inteligente</h3>
+          <p class="text-sm text-gray-600">Calendario con detección de conflictos y recordatorios automáticos.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-lg transition-all animate-on-scroll">
+          <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy text-lg mb-2">Clientes y Mascotas</h3>
+          <p class="text-sm text-gray-600">Perfiles completos con historial y datos de contacto.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-lg transition-all animate-on-scroll">
+          <div class="w-10 h-10 bg-teal/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 12a2 2 0 002 2h2a2 2 0 002-2M9 12a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy text-lg mb-2">Vacunas y Recordatorios</h3>
+          <p class="text-sm text-gray-600">Alertas automáticas para próximas vacunas y tratamientos.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-lg transition-all animate-on-scroll">
+          <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy text-lg mb-2">Facturación</h3>
+          <p class="text-sm text-gray-600">Genera facturas, controla pagos y visualiza ingresos.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-lg transition-all animate-on-scroll">
+          <div class="w-10 h-10 bg-teal/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy text-lg mb-2">Inventario</h3>
+          <p class="text-sm text-gray-600">Control de stock con alertas de productos bajos.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-lg transition-all animate-on-scroll">
+          <div class="w-10 h-10 bg-teal/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0 2 2 0 014 0 3 3 0 01-6 0v-1m6 0H9"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy text-lg mb-2">Notificaciones</h3>
+          <p class="text-sm text-gray-600">Push notifications para staff y clientes en tiempo real.</p>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-lg transition-all animate-on-scroll">
+          <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy text-lg mb-2">Reportes</h3>
+          <p class="text-sm text-gray-600">Analytics detallados de ingresos, citas y pacientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 animate-on-scroll">
+        <span class="text-sm font-semibold text-teal uppercase tracking-wider mb-2 block">Proceso Simple</span>
+        <h2 class="font-display text-4xl md:text-6xl font-bold text-navy mb-4">Cómo funciona</h2>
+      </div>
+
+      <div class="space-y-12">
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start animate-on-scroll">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal to-navy rounded-full flex items-center justify-center text-white font-display text-2xl font-bold">
+            1
+          </div>
+          <div class="flex-1">
+            <h3 class="font-display text-2xl font-semibold text-navy mb-3">Configura tu clínica</h3>
+            <p class="text-gray-600 leading-relaxed">Crea tu cuenta, añade información de tu veterinaria y configura servicios. Todo en menos de 15 minutos.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start animate-on-scroll">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal to-navy rounded-full flex items-center justify-center text-white font-display text-2xl font-bold">
+            2
+          </div>
+          <div class="flex-1">
+            <h3 class="font-display text-2xl font-semibold text-navy mb-3">Agrega clientes y mascotas</h3>
+            <p class="text-gray-600 leading-relaxed">Registra tus clientes actuales y sus mascotas. Agenda la primera cita desde el dashboard web.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start animate-on-scroll">
+          <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal to-navy rounded-full flex items-center justify-center text-white font-display text-2xl font-bold">
+            3
+          </div>
+          <div class="flex-1">
+            <h3 class="font-display text-2xl font-semibold text-navy mb-3">Todo sincronizado</h3>
+            <p class="text-gray-600 leading-relaxed">Tu staff descarga la app y gestiona desde móvil. Los clientes ven historial y reciben recordatorios. Todo conectado en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 animate-on-scroll">
+        <a href="#contact" class="inline-block bg-gradient-to-r from-teal to-navy text-white px-8 py-4 rounded-sm font-semibold hover:opacity-90 transition-opacity">
+          Comenzar Ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12 animate-on-scroll">
+        <span class="text-sm font-semibold text-teal uppercase tracking-wider mb-2 block">Planes Flexibles</span>
+        <h2 class="font-display text-4xl md:text-6xl font-bold text-navy mb-4">Elige tu plan</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Comienza con 30 días gratis. Sin tarjeta de crédito requerida.</p>
+
+        <!-- Pricing Toggle -->
+        <div class="inline-flex items-center gap-4 bg-white border border-gray-200 rounded-full p-1">
+          <button id="monthly-btn" class="px-6 py-2 rounded-full bg-gradient-to-r from-teal to-navy text-white font-semibold text-sm transition-all">
+            Mensual
+          </button>
+          <button id="annual-btn" class="px-6 py-2 rounded-full text-gray-600 font-semibold text-sm transition-all">
+            Anual <span class="text-teal text-xs">(20% OFF)</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Starter Plan -->
+        <div class="bg-white border border-gray-200 rounded-sm p-8 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+          <h3 class="font-display text-2xl font-semibold text-navy mb-2">Starter</h3>
+          <p class="text-gray-600 text-sm mb-6">Para clínicas pequeñas que empiezan</p>
+          <div class="mb-6">
+            <span class="text-5xl font-bold text-navy pricing-amount" data-monthly="$49" data-annual="$39">$49</span>
+            <span class="text-gray-500">/mes</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>1 sucursal</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Hasta 3 usuarios staff</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Web Admin completo</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Agenda y clientes/mascotas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Facturación básica</span>
+            </li>
+          </ul>
+          <a href="#contact" class="block w-full text-center border-2 border-navy text-navy py-3 rounded-sm font-semibold hover:bg-navy hover:text-white transition-colors">
+            Comenzar Gratis
+          </a>
+        </div>
+
+        <!-- Pro Plan (Most Popular) -->
+        <div class="bg-gradient-to-br from-teal to-navy text-white rounded-sm p-8 shadow-xl transform scale-105 relative animate-on-scroll">
+          <div class="absolute top-0 right-0 bg-white text-navy px-4 py-1 rounded-bl-sm rounded-tr-sm text-xs font-bold">
+            MÁS POPULAR
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-2">Pro</h3>
+          <p class="text-white/80 text-sm mb-6">Para clínicas en crecimiento</p>
+          <div class="mb-6">
+            <span class="text-5xl font-bold pricing-amount" data-monthly="$99" data-annual="$79">$99</span>
+            <span class="text-white/80">/mes</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Todo de Starter</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Usuarios staff ilimitados</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Inventario y control de stock</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Recordatorios y notificaciones</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>App Staff + App Clientes incluidas</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Reportes avanzados</span>
+            </li>
+          </ul>
+          <a href="#contact" class="block w-full text-center bg-white text-navy py-3 rounded-sm font-semibold hover:bg-gray-100 transition-colors">
+            Comenzar Gratis
+          </a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="bg-white border border-gray-200 rounded-sm p-8 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+          <h3 class="font-display text-2xl font-semibold text-navy mb-2">Enterprise</h3>
+          <p class="text-gray-600 text-sm mb-6">Para cadenas de clínicas</p>
+          <div class="mb-6">
+            <span class="text-5xl font-bold text-navy">Custom</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Todo de Pro</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Multi-sucursal ilimitado</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Integraciones personalizadas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Soporte prioritario 24/7</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Onboarding y migración incluidos</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-teal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Account manager dedicado</span>
+            </li>
+          </ul>
+          <a href="#contact" class="block w-full text-center border-2 border-navy text-navy py-3 rounded-sm font-semibold hover:bg-navy hover:text-white transition-colors">
+            Contactar Ventas
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download Section -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-12 animate-on-scroll">
+        <span class="text-sm font-semibold text-teal uppercase tracking-wider mb-2 block">Descarga las Apps</span>
+        <h2 class="font-display text-4xl md:text-6xl font-bold text-navy mb-4">Disponibles en iOS y Android</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Staff App -->
+        <div class="animate-on-scroll">
+          <div class="bg-gray-100 rounded-sm p-8 mb-6">
+            <svg class="w-20 h-20 mx-auto text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-navy mb-4">App para Staff</h3>
+          <p class="text-gray-600 mb-6">Gestión móvil para veterinarios y personal de la clínica.</p>
+          <div class="flex flex-col gap-3">
+            <a href="#" class="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-sm hover:bg-gray-800 transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span>App Store</span>
+            </a>
+            <a href="#" class="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-sm hover:bg-gray-800 transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+              </svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Client App -->
+        <div class="animate-on-scroll">
+          <div class="bg-gray-100 rounded-sm p-8 mb-6">
+            <svg class="w-20 h-20 mx-auto text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-navy mb-4">App para Clientes</h3>
+          <p class="text-gray-600 mb-6">Para dueños de mascotas. Historial y recordatorios.</p>
+          <div class="flex flex-col gap-3">
+            <a href="#" class="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-sm hover:bg-gray-800 transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span>App Store</span>
+            </a>
+            <a href="#" class="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-sm hover:bg-gray-800 transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+              </svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 animate-on-scroll">
+        <span class="text-sm font-semibold text-teal uppercase tracking-wider mb-2 block">Preguntas Frecuentes</span>
+        <h2 class="font-display text-4xl md:text-6xl font-bold text-navy mb-4">FAQ</h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <details class="group bg-white border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors animate-on-scroll">
+          <summary class="flex items-center justify-between cursor-pointer text-navy font-semibold text-lg">
+            ¿Hay prueba gratis?
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed">
+            Sí, todos los planes incluyen 30 días de prueba gratis. No necesitas tarjeta de crédito para comenzar.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-white border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors animate-on-scroll">
+          <summary class="flex items-center justify-between cursor-pointer text-navy font-semibold text-lg">
+            ¿Puedo cancelar cuando quiera?
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed">
+            Absolutamente. No hay contratos a largo plazo. Puedes cancelar tu suscripción en cualquier momento desde tu panel de control.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-white border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors animate-on-scroll">
+          <summary class="flex items-center justify-between cursor-pointer text-navy font-semibold text-lg">
+            ¿Incluye ambas apps móviles?
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed">
+            El plan Pro y Enterprise incluyen ambas apps (Staff y Clientes) sin costo adicional. El plan Starter solo incluye el Web Admin.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-white border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors animate-on-scroll">
+          <summary class="flex items-center justify-between cursor-pointer text-navy font-semibold text-lg">
+            ¿Cómo funciona la app del cliente?
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed">
+            Los dueños de mascotas reciben un código de acceso cuando registras su mascota. Con ese código descargan la app y pueden ver historial médico, próximas vacunas, facturas y recibir recordatorios automáticos.
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="group bg-white border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors animate-on-scroll">
+          <summary class="flex items-center justify-between cursor-pointer text-navy font-semibold text-lg">
+            ¿Mis datos están seguros?
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed">
+            Sí. Todos los datos están encriptados y almacenados en servidores seguros. Cumplimos con estándares internacionales de seguridad y privacidad de datos médicos.
+          </div>
+        </details>
+
+        <!-- FAQ 6 -->
+        <details class="group bg-white border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors animate-on-scroll">
+          <summary class="flex items-center justify-between cursor-pointer text-navy font-semibold text-lg">
+            ¿Puedo usarlo en varias sucursales?
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed">
+            El plan Enterprise está diseñado para cadenas con múltiples sucursales. Puedes gestionar todo desde un solo dashboard con permisos por ubicación.
+          </div>
+        </details>
+
+        <!-- FAQ 7 -->
+        <details class="group bg-white border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors animate-on-scroll">
+          <summary class="flex items-center justify-between cursor-pointer text-navy font-semibold text-lg">
+            ¿Ofrecen migración de datos?
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-600 leading-relaxed">
+            Sí. El plan Enterprise incluye migración asistida de tu sistema actual. Nuestro equipo se encarga de importar clientes, mascotas e historial clínico.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="py-20 px-4 bg-gradient-to-br from-teal to-navy text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="font-display text-4xl md:text-6xl font-bold mb-6 animate-on-scroll">
+        Empieza hoy con Karey Vet
+      </h2>
+      <p class="text-xl md:text-2xl mb-8 opacity-90 animate-on-scroll">
+        Prueba gratis por 30 días. Sin tarjeta de crédito. Cancela cuando quieras.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+        <a href="#" class="bg-white text-navy px-8 py-4 rounded-sm font-semibold text-lg hover:bg-gray-100 transition-colors">
+          Start Free Trial
+        </a>
+        <a href="#" class="border-2 border-white text-white px-8 py-4 rounded-sm font-semibold text-lg hover:bg-white hover:text-navy transition-colors">
+          Agendar Demo
+        </a>
+      </div>
+      <p class="text-sm mt-8 opacity-70">
+        Únete a más de 500 veterinarias que confían en Karey Vet
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <img src="assets/images/Diseno_sin_titulo_1_-removebg-preview.png" alt="Karey Vet" class="h-10 w-auto object-contain">
+          <span class="font-display text-2xl font-semibold">Karey Vet</span>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-wrap gap-6 text-sm">
+          <a href="#features" class="hover:text-teal transition-colors">Features</a>
+          <a href="#platforms" class="hover:text-teal transition-colors">Platforms</a>
+          <a href="#pricing" class="hover:text-teal transition-colors">Pricing</a>
+          <a href="#faq" class="hover:text-teal transition-colors">FAQ</a>
+          <a href="#contact" class="hover:text-teal transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
+        <p>© 2026 Karey Vet. Todos los derechos reservados.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+          <a href="#" class="hover:text-white transition-colors">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('translate-y-full');
+    });
+
+    // Close mobile menu when clicking links
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-y-full');
+      });
+    });
+
+    // Pricing Toggle
+    const monthlyBtn = document.getElementById('monthly-btn');
+    const annualBtn = document.getElementById('annual-btn');
+    const pricingAmounts = document.querySelectorAll('.pricing-amount');
+
+    monthlyBtn.addEventListener('click', () => {
+      monthlyBtn.classList.add('bg-gradient-to-r', 'from-teal', 'to-navy', 'text-white');
+      monthlyBtn.classList.remove('text-gray-600');
+      annualBtn.classList.remove('bg-gradient-to-r', 'from-teal', 'to-navy', 'text-white');
+      annualBtn.classList.add('text-gray-600');
+
+      pricingAmounts.forEach(amount => {
+        amount.textContent = amount.getAttribute('data-monthly');
+      });
+    });
+
+    annualBtn.addEventListener('click', () => {
+      annualBtn.classList.add('bg-gradient-to-r', 'from-teal', 'to-navy', 'text-white');
+      annualBtn.classList.remove('text-gray-600');
+      monthlyBtn.classList.remove('bg-gradient-to-r', 'from-teal', 'to-navy', 'text-white');
+      monthlyBtn.classList.add('text-gray-600');
+
+      pricingAmounts.forEach(amount => {
+        amount.textContent = amount.getAttribute('data-annual');
+      });
+    });
+
+    // Scroll Animation Observer
+    (function() {
+      const style = document.createElement('style');
+      style.textContent = `
+        .animate-on-scroll { animation-play-state: paused !important; }
+        .animate-on-scroll.animate { animation-play-state: running !important; }
+      `;
+      document.head.appendChild(style);
+
+      const once = true;
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              if (once) window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+      }
+
+      window.initInViewAnimations = function(selector = '.animate-on-scroll') {
+        document.querySelectorAll(selector).forEach((el) => {
+          window.__inViewIO.observe(el);
+        });
+      };
+
+      // Initialize on load and after DOM changes
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => initInViewAnimations());
+      } else {
+        initInViewAnimations();
+      }
+
+      // Check for already visible elements
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
+            el.classList.add('animate');
+            if (once) window.__inViewIO.unobserve(el);
+          }
+        });
+      });
+    })();
+  </script>
+<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+</body>
+</html>
