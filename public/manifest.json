@@ -1,6 +1,7 @@
 {
-  "short_name": "karey-vet",
-  "name": "karey-vet",
+  "short_name": "Karey Vet",
+  "name": "Karey Vet",
+  "description": "Sistema de gestión veterinaria para citas, pacientes, historial clínico, facturación e inventario.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +11,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#2D3A66",
   "background_color": "#ffffff"
 }
