@@ -220,8 +220,62 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <article class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+      <div class="product-walkthrough" data-product-walkthrough>
+        <div class="walkthrough-steps" aria-label="Módulos de Karey Vet">
+        <article id="walkthrough-today" class="walkthrough-step is-active" data-module="today">
+          <button class="walkthrough-nav-item" type="button" data-module-target="today" aria-controls="product-stage" aria-current="true">
+            <span class="walkthrough-index">01</span><span class="walkthrough-title">Today</span>
+            <span class="walkthrough-indicator" aria-hidden="true"></span>
+          </button>
+          <div class="walkthrough-step-copy"><p>El panel Today te ayuda a ver próximas citas, pacientes en espera, atenciones activas y pendientes del día desde un solo lugar.</p></div>
+        </article>
+
+        <article id="walkthrough-agenda" class="walkthrough-step" data-module="agenda">
+          <button class="walkthrough-nav-item" type="button" data-module-target="agenda" aria-controls="product-stage" aria-current="false">
+            <span class="walkthrough-index">02</span><span class="walkthrough-title">Agenda</span>
+            <span class="walkthrough-indicator" aria-hidden="true"></span>
+          </button>
+          <div class="walkthrough-step-copy"><p>Organiza horarios, tipo de cita, confirmación y flujo del día sin depender de mensajes sueltos o agendas paralelas.</p></div>
+        </article>
+
+        <article id="walkthrough-pacientes" class="walkthrough-step" data-module="pacientes">
+          <button class="walkthrough-nav-item" type="button" data-module-target="pacientes" aria-controls="product-stage" aria-current="false">
+            <span class="walkthrough-index">03</span><span class="walkthrough-title">Pacientes</span>
+            <span class="walkthrough-indicator" aria-hidden="true"></span>
+          </button>
+          <div class="walkthrough-step-copy"><p>Accede a mascota, visitas, vacunas, notas y adjuntos sin reconstruir el contexto en mitad de la consulta.</p></div>
+        </article>
+
+        <article id="walkthrough-facturacion" class="walkthrough-step" data-module="facturacion">
+          <button class="walkthrough-nav-item" type="button" data-module-target="facturacion" aria-controls="product-stage" aria-current="false">
+            <span class="walkthrough-index">04</span><span class="walkthrough-title">Facturación</span>
+            <span class="walkthrough-indicator" aria-hidden="true"></span>
+          </button>
+          <div class="walkthrough-step-copy"><p>Lleva servicios y productos al cobro con subtotal, impuestos, pagos, impresión y PDF sin salir del flujo de atención.</p></div>
+        </article>
+
+        <article id="walkthrough-inventario" class="walkthrough-step" data-module="inventario">
+          <button class="walkthrough-nav-item" type="button" data-module-target="inventario" aria-controls="product-stage" aria-current="false">
+            <span class="walkthrough-index">05</span><span class="walkthrough-title">Inventario</span>
+            <span class="walkthrough-indicator" aria-hidden="true"></span>
+          </button>
+          <div class="walkthrough-step-copy"><p>Controla catálogo, SKU, costos, stock mínimo y movimientos para anticiparte a faltantes reales.</p></div>
+        </article>
+
+        <article id="walkthrough-dashboard" class="walkthrough-step" data-module="dashboard">
+          <button class="walkthrough-nav-item" type="button" data-module-target="dashboard" aria-controls="product-stage" aria-current="false">
+            <span class="walkthrough-index">06</span><span class="walkthrough-title">Dashboard</span>
+            <span class="walkthrough-indicator" aria-hidden="true"></span>
+          </button>
+          <div class="walkthrough-step-copy"><p>Consulta rápidamente citas, vacunas próximas, alertas de inventario y otros puntos que necesitan atención durante el día.</p></div>
+        </article>
+        </div>
+
+        <div id="product-stage" class="product-stage" aria-live="polite">
+          <div class="product-browser-shell">
+            <div class="product-browser-bar"><span></span><span></span><span></span><small>Karey Vet Web</small></div>
+            <div class="product-screen-stack">
+        <div class="product-screen is-active" data-screen="today">
           <div class="preview-window">
             <div class="preview-window-top">
               <span class="font-semibold text-navy">Hoy</span>
@@ -256,11 +310,10 @@
               </div>
             </div>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-navy mb-3">Today</h3>
-          <p class="text-gray-600 leading-relaxed">El panel Today te ayuda a ver próximas citas, pacientes en espera, atenciones activas y pendientes del día desde un solo lugar.</p>
-        </article>
+          <div class="product-screen-caption"><span class="font-display text-2xl font-semibold text-navy">Today</span><span>01 / 06</span></div>
+        </div>
 
-        <article class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+        <div class="product-screen" data-screen="agenda">
           <div class="preview-window">
             <div class="preview-window-top">
               <span class="font-semibold text-navy">Agenda</span>
@@ -289,14 +342,13 @@
               </div>
             </div>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-navy mb-3">Agenda</h3>
-          <p class="text-gray-600 leading-relaxed">Organiza horarios, tipo de cita, confirmación y flujo del día sin depender de mensajes sueltos o agendas paralelas.</p>
-        </article>
+          <div class="product-screen-caption"><span class="font-display text-2xl font-semibold text-navy">Agenda</span><span>02 / 06</span></div>
+        </div>
 
-        <article class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+        <div class="product-screen" data-screen="pacientes">
           <div class="preview-window">
             <div class="preview-window-top">
-              <span class="font-semibold text-navy">Paciente</span>
+              <span class="font-semibold text-navy">Pacientes</span>
               <span class="preview-pill preview-pill-navy">Historial</span>
             </div>
             <div class="preview-profile">
@@ -321,11 +373,10 @@
               </div>
             </div>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-navy mb-3">Paciente</h3>
-          <p class="text-gray-600 leading-relaxed">Accede a mascota, visitas, vacunas, notas y adjuntos sin reconstruir el contexto en mitad de la consulta.</p>
-        </article>
+          <div class="product-screen-caption"><span class="font-display text-2xl font-semibold text-navy">Pacientes</span><span>03 / 06</span></div>
+        </div>
 
-        <article class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+        <div class="product-screen" data-screen="facturacion">
           <div class="preview-window">
             <div class="preview-window-top">
               <span class="font-semibold text-navy">Facturación</span>
@@ -354,11 +405,10 @@
               </div>
             </div>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-navy mb-3">Facturación</h3>
-          <p class="text-gray-600 leading-relaxed">Lleva servicios y productos al cobro con subtotal, impuestos, pagos, impresión y PDF sin salir del flujo de atención.</p>
-        </article>
+          <div class="product-screen-caption"><span class="font-display text-2xl font-semibold text-navy">Facturación</span><span>04 / 06</span></div>
+        </div>
 
-        <article class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+        <div class="product-screen" data-screen="inventario">
           <div class="preview-window">
             <div class="preview-window-top">
               <span class="font-semibold text-navy">Inventario</span>
@@ -380,11 +430,10 @@
             </div>
             <div class="preview-note">Mínimos, movimientos y alertas para no enterarse tarde de lo que falta.</div>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-navy mb-3">Inventario</h3>
-          <p class="text-gray-600 leading-relaxed">Controla catálogo, SKU, costos, stock mínimo y movimientos para anticiparte a faltantes reales.</p>
-        </article>
+          <div class="product-screen-caption"><span class="font-display text-2xl font-semibold text-navy">Inventario</span><span>05 / 06</span></div>
+        </div>
 
-        <article class="bg-white border border-gray-200 rounded-sm p-6 hover:border-teal hover:shadow-xl transition-all animate-on-scroll">
+        <div class="product-screen" data-screen="dashboard">
           <div class="preview-window">
             <div class="preview-window-top">
               <span class="font-semibold text-navy">Dashboard</span>
@@ -406,9 +455,11 @@
             </div>
             <div class="preview-note">Un panorama rápido para revisar agenda, operación, inventario y seguimiento desde el mismo tablero.</div>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-navy mb-3">Dashboard</h3>
-          <p class="text-gray-600 leading-relaxed">Consulta rápidamente citas, vacunas próximas, alertas de inventario y otros puntos que necesitan atención durante el día.</p>
-        </article>
+          <div class="product-screen-caption"><span class="font-display text-2xl font-semibold text-navy">Dashboard</span><span>06 / 06</span></div>
+        </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1212,6 +1263,7 @@
       'Recepción': 'Check-in',
       'Organiza horarios, tipo de cita, confirmación y flujo del día sin depender de mensajes sueltos o agendas paralelas.': 'Organize timeslots, appointment type, confirmations, and your daily flow without relying on scattered messages or parallel calendars.',
       'Paciente': 'Patient',
+      'Pacientes': 'Patients',
       'Historial': 'Record',
       'Vacuna próxima': 'Upcoming vaccine',
       'Última visita': 'Last visit',
@@ -1570,6 +1622,36 @@
         amount.textContent = amount.getAttribute('data-annual');
       });
     });
+
+    const walkthrough = document.querySelector('[data-product-walkthrough]');
+    if (walkthrough) {
+      const steps = [...walkthrough.querySelectorAll('.walkthrough-step')];
+      const screens = [...walkthrough.querySelectorAll('.product-screen')];
+      const setWalkthroughModule = (moduleId) => {
+        steps.forEach((step) => {
+          const isActive = step.dataset.module === moduleId;
+          step.classList.toggle('is-active', isActive);
+          step.querySelector('.walkthrough-nav-item')?.setAttribute('aria-current', String(isActive));
+        });
+        screens.forEach((screen) => screen.classList.toggle('is-active', screen.dataset.screen === moduleId));
+      };
+
+      steps.forEach((step) => {
+        step.querySelector('.walkthrough-nav-item')?.addEventListener('click', () => {
+          step.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+        });
+      });
+
+      const walkthroughObserver = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setWalkthroughModule(visible.target.dataset.module);
+      }, { threshold: [0.25, 0.5, 0.75], rootMargin: '-18% 0px -42% 0px' });
+
+      steps.forEach((step) => walkthroughObserver.observe(step));
+      setWalkthroughModule('today');
+    }
 
     applyLanguage(currentLanguage);
     applyTheme(currentTheme);
