@@ -34,7 +34,7 @@
           <a href="#use-cases" class="text-gray-600 hover:text-teal transition-colors">Casos de uso</a>
           <a href="#pricing" class="text-gray-600 hover:text-teal transition-colors">Precios</a>
           <a href="#faq" class="text-gray-600 hover:text-teal transition-colors">FAQ</a>
-          <a href="#contact" class="bg-gradient-to-r from-teal to-navy text-white px-6 py-2 rounded-sm hover:opacity-90 transition-opacity">Solicitar demo</a>
+          <a href="#contact" data-demo-cta target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-teal to-navy text-white px-6 py-2 rounded-sm hover:opacity-90 transition-opacity">Solicitar demo</a>
           <div class="nav-switches" aria-label="Controles de interfaz">
             <div class="ui-switch" role="group" aria-label="Idioma">
               <button type="button" class="ui-switch-btn active" data-set-lang="es">ES</button>
@@ -89,7 +89,7 @@
           </button>
         </div>
       </div>
-      <a href="#contact" class="bg-gradient-to-r from-teal to-navy text-white px-8 py-3 rounded-sm text-lg">Solicitar demo</a>
+      <a href="#contact" data-demo-cta target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-teal to-navy text-white px-8 py-3 rounded-sm text-lg">Solicitar demo</a>
     </div>
   </div>
 
@@ -124,7 +124,7 @@
       </div>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-on-scroll" style="animation: animationIn 0.8s ease-out 0.7s both;">
-        <a href="#contact" class="bg-gradient-to-r from-teal to-navy text-white px-8 py-4 rounded-sm font-semibold text-lg hover:opacity-90 transition-all hover:shadow-2xl hover:scale-105 text-center">
+        <a href="#contact" data-demo-cta target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-teal to-navy text-white px-8 py-4 rounded-sm font-semibold text-lg hover:opacity-90 transition-all hover:shadow-2xl hover:scale-105 text-center">
           Solicitar demo
         </a>
         <a href="#demo" class="border-2 border-navy bg-white/80 backdrop-blur-sm text-navy px-8 py-4 rounded-sm font-semibold text-lg hover:bg-navy hover:text-white transition-all hover:shadow-xl text-center">
@@ -913,7 +913,7 @@
             <li>Clientes y mascotas</li>
             <li>Servicios, facturación y perfil de clínica</li>
           </ul>
-          <a href="#contact" class="block w-full text-center border-2 border-navy text-navy py-3 rounded-sm font-semibold hover:bg-navy hover:text-white transition-colors">
+          <a href="#contact" data-demo-cta target="_blank" rel="noopener noreferrer" class="block w-full text-center border-2 border-navy text-navy py-3 rounded-sm font-semibold hover:bg-navy hover:text-white transition-colors">
             Solicitar demo
           </a>
         </article>
@@ -936,7 +936,7 @@
             <li>Inventario y alertas de stock</li>
             <li>Roles, permisos y recordatorios</li>
           </ul>
-          <a href="#contact" class="block w-full text-center bg-white text-navy py-3 rounded-sm font-semibold hover:bg-gray-100 transition-colors">
+          <a href="#contact" data-demo-cta target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-white text-navy py-3 rounded-sm font-semibold hover:bg-gray-100 transition-colors">
             Solicitar demo
           </a>
         </article>
@@ -1156,6 +1156,14 @@
   </footer>
 
   <script>
+    const WHATSAPP_NUMBER = '18299851507';
+    const DEMO_MESSAGE = 'Hola 👋 Vi Karey Vet y me gustaría conocer mejor el sistema y solicitar una demo para mi clínica veterinaria. ¿Podrían darme más información?';
+    const WHATSAPP_DEMO_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEMO_MESSAGE)}`;
+
+    document.querySelectorAll('[data-demo-cta]').forEach((cta) => {
+      cta.href = WHATSAPP_DEMO_URL;
+    });
+
     const storageKeys = {
       language: 'kareyVetLanguage',
       theme: 'kareyVetTheme',
