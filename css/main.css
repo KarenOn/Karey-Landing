@@ -1806,6 +1806,7 @@ button:focus-visible {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
 }
 
 .product-screen-caption > span:last-child {
