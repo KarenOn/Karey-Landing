@@ -1488,6 +1488,41 @@
       setWalkthroughModule('today');
     }
 
+//     document.addEventListener('DOMContentLoaded', () => {
+//   const switchModule = (moduleTarget) => {
+//     // 1. Cambiar la pantalla activa
+//     document.querySelectorAll('.product-screen').forEach(screen => {
+//       screen.classList.toggle('is-active', screen.dataset.screen === moduleTarget);
+//     });
+
+//     // 2. Actualizar pasos en Desktop
+//     document.querySelectorAll('.walkthrough-step').forEach(step => {
+//       step.classList.toggle('is-active', step.dataset.module === moduleTarget);
+//     });
+
+//     // 3. Actualizar pestañas en Móvil
+//     document.querySelectorAll('[data-mobile-tab]').forEach(tab => {
+//       tab.classList.toggle('active', tab.dataset.mobileTab === moduleTarget);
+//     });
+//   };
+
+//   // Eventos para móvil
+//   document.querySelectorAll('[data-mobile-tab]').forEach(tab => {
+//     tab.addEventListener('click', (e) => {
+//       const target = e.currentTarget.dataset.mobileTab;
+//       switchModule(target);
+//     });
+//   });
+
+//   // Eventos para desktop
+//   document.querySelectorAll('[data-module-target]').forEach(button => {
+//     button.addEventListener('click', (e) => {
+//       const target = e.currentTarget.dataset.moduleTarget;
+//       switchModule(target);
+//     });
+//   });
+// });
+
     applyLanguage(currentLanguage);
     applyTheme(currentTheme);
     setMobileMenuState(false);
