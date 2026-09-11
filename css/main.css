@@ -1820,7 +1820,7 @@ button:focus-visible {
   .walkthrough-nav-item, .walkthrough-indicator, .product-screen { transition: none; }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .product-walkthrough { display: block; }
   .walkthrough-steps { padding-left: 0; }
   .walkthrough-steps::before { display: none; }
@@ -1828,6 +1828,58 @@ button:focus-visible {
   .walkthrough-step-copy { max-width: none; padding: 0.2rem 0 0 2.6rem; }
   .product-stage { margin-top: 1rem; position: static; }
   .product-screen .preview-window { min-height: 0; }
+} */
+
+/* Reemplaza tu bloque @media (max-width: 768px) actual por este: */
+
+@media (max-width: 768px) {
+  /* 1. Mantenemos el stage (imagen) fijo en la parte superior en móviles mientras se hace scroll */
+  .product-stage {
+    position: sticky;
+    top: 1rem;
+    z-index: 20;
+    margin-bottom: 2rem;
+  }
+
+  /* 2. Damos un alto suficiente a cada paso para que el sensor de Scroll/JS capture cada módulo al bajar */
+  .walkthrough-step {
+    min-height: 40vh;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 0.5rem;
+    border: 1px solid rgb(229 231 235);
+  }
+
+  /* 3. Ajustes visuales de márgenes e indicadores */
+  .product-walkthrough { 
+    display: flex; 
+    flex-direction: column-reverse; /* Pone la ventana de la pantalla ARRIBA y el texto ABAJO */
+  }
+
+  .walkthrough-steps { 
+    padding-left: 0; 
+  }
+
+  .walkthrough-steps::before { 
+    display: none; 
+  }
+
+  .walkthrough-step-copy { 
+    max-width: none; 
+    padding: 0.5rem 0 0 2.6rem; 
+  }
+
+  .product-screen .preview-window { 
+    min-height: 0; 
+  }
+}
+
+/* Soporte para modo oscuro en el fondo transparente de los pasos móviles */
+body[data-theme="dark"] .walkthrough-step {
+  background: rgba(13, 24, 41, 0.9);
+  border-color: rgb(148 163 184 / 0.18);
 }
 
 body[data-theme="dark"] .product-browser-shell { background: #0d1829; border-color: rgb(148 163 184 / 0.18); }
